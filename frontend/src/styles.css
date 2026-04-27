@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #0f1b2d;
+  --panel: #15233a;
+  --accent: #ff9f1c;
+  --accent-2: #2ec4b6;
+  --text: #f6f7fb;
+  --muted: #b3bdd1;
+  --border: #243556;
+  --soft: #1b2b49;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(46, 196, 182, 0.35), transparent 60%),
+    radial-gradient(700px 400px at 90% 10%, rgba(255, 159, 28, 0.35), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 42px 0 64px;
+  display: grid;
+  gap: 22px;
+}
+
+.hero {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 10px;
+  color: var(--accent);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(22px, 3vw, 34px);
+  margin: 0;
+}
+
+.subhead {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+.pill {
+  background: var(--soft);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 16px 40px rgba(6, 12, 24, 0.35);
+}
+
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  background: #0e1a2d;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 12px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: 2px solid rgba(46, 196, 182, 0.25);
+  border-color: rgba(46, 196, 182, 0.55);
+}
+
+button {
+  background: linear-gradient(120deg, var(--accent), #ffbf69);
+  color: #1b140b;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  justify-self: start;
+}
+
+.status {
+  font-size: 12px;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.output pre {
+  margin: 0;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #d7deea;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--accent-2);
+  color: #0f1b1a;
+  border-color: var(--accent-2);
+}
+
+.assumptions,
+.questions,
+.execution,
+.preview {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.assumptions h3,
+.questions h3,
+.execution h3,
+.preview h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.assumptions ul,
+.questions ul,
+.execution ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0;
+  font-size: 13px;
+}
+
+.preview-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.preview-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: #12213a;
+}
+
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.preview-title {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.preview-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
