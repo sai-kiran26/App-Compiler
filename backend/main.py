@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict
 
 from evaluator import EDGE_PROMPTS, REAL_PROMPTS, evaluate_prompts
@@ -28,6 +29,14 @@ class ValidateRequest(BaseModel):
 
 
 app = FastAPI(title="App Compiler", version="1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DB_PATH = DATA_DIR / "runtime.db"
