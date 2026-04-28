@@ -10,7 +10,7 @@ export default function PromptInput() {
 
   async function handleGenerate() {
     setStatus("Compiling...");
-    const response = await fetch("/generate", {
+    const response = await fetch("https://appforge-backend.onrender.com/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
